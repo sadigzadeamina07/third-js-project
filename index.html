@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Cüt və ya Tək</h1>
+    <input type="number" id="eded" placeholder="Ədəd daxil edin">
+    <button onclick="result1()">Yoxla</button
+        br><br>
+    <span id="ntca"></span>
+
+    <h1> Yaş yoxlama</h1>
+    <input type="number" id="yas" placeholder="Yaşınızı daxil edin">
+    <button onclick="result2()">Yoxla</button>
+    <br><br>
+    <span id="ntcb"></span>
+
+    <h1> Qiymətləndirmə</h1>
+    <input type="number" id="qiymet" placeholder="Balınızı daxil edin">
+    <button onclick="result3()">Yoxla</button>
+    <br><br>
+    <span id="ntcc"></span>
+
+    <h1>Ədədlərin müqayisə edilməsi</h1>
+    <input type="number" id="eded1" placeholder="Ədədi daxil edin">
+    <input type="number" id="eded2" placeholder="Ədədi daxil edin">
+    <input type="number" id="eded3" placeholder="Ədədi daxil edin">
+    <button onclick="result()">Yoxla</button>
+    <br><br>
+    <span id="ntcd"></span>
+
+    <script>
+        let a2 = document.getElementById('a2')
+        let ntca = document.getElementById('ntca')
+        let yas = document.getElementById('yas')
+        let ntcb = document.getElementById('ntcb')
+        let qiymet = document.getElementById('qiymet')
+        let ntcc = document.getElementById('ntcc')
+        let eded1 = document.getElementById('eded1')
+        let eded2 = document.getElementById('eded2')
+        let eded3 = document.getElementById('eded3')
+        let ntcd = document.getElementById('ntcd')
+        function result1() {
+            ntca.innerHTML = eded.value % 2 === 0 ? "Cütdür" : "Təkdir";
+        }
+
+        function result2() {
+            ntcb.innerHTML = (yas.value > 0 && yas.value <= 12) ? "Uşaqsınız" :
+                (yas.value >= 13 && yas.value <= 17) ? "Yeniyetməsiniz" :
+                (yas.value >= 18 && yas.value <= 25) ? "Gəncsiniz" :
+                (yas.value >= 26 && yas.value <= 60) ? "Orta yaşlısınız" :
+                (yas.value >= 61 && yas.value <=100 )  ? "Yaşlısınız" :
+                (yas.value >= 101) ? "Yaşayan ölüsünüz" :
+                "Zəhmət olmasa yaşınızı düzgün yazın";
+        }
+        function result3() {
+            ntcc.innerHTML = (qiymet.value >= 91 && qiymet.value <= 100) ? "Qiymətləndirmə: A" :
+                (qiymet.value >= 81 && qiymet.value <= 90) ? "Qiymətləndirmə: B" :
+                (qiymet.value >= 71 && qiymet.value <= 80) ? "Qiymətləndirmə: C" :
+                (qiymet.value >= 61 && qiymet.value <= 70) ? "Qiymətləndirmə: D" :
+                (qiymet.value >= 51 && qiymet.value <= 60) ? "Qiymətləndirmə: E" :
+                (qiymet.value >= 0 && qiymet.value <= 50) ? "Təsüfki.siz kəsilmisiniz!" :
+                "Zəhmət olmasa düzgün imtahan balı yazın (0-100 arasında)";
+        }
+        function result() {
+            let eded1 = Number(document.getElementById('eded1').value);
+            let eded2 = Number(document.getElementById('eded2').value);
+            let eded3 = Number(document.getElementById('eded3').value);
+            let enBoyuk = eded1;
+            if (eded2 > enBoyuk) enBoyuk = eded2;
+            if (eded3 > enBoyuk) enBoyuk = eded3;
+
+            ntcd.innerHTML = "Ən böyük: " + enBoyuk ;
+        }
+    </script>
+</body>
+
+</html>
